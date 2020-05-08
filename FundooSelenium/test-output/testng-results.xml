@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="45878" started-at="2020-05-08T05:49:07Z" finished-at="2020-05-08T05:49:53Z">
+  <suite name="Default suite" duration-ms="29082" started-at="2020-05-08T06:44:37Z" finished-at="2020-05-08T06:45:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="45878" started-at="2020-05-08T05:49:07Z" finished-at="2020-05-08T05:49:53Z">
+    <test name="Default test" duration-ms="29082" started-at="2020-05-08T06:44:37Z" finished-at="2020-05-08T06:45:06Z">
       <class name="com.bridgelabz.fundoo.UserService.UserServiceTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.bridgelabz.fundoo.UserService.UserServiceTest@4b168fa9]" name="beforeTest" is-config="true" duration-ms="18393" started-at="2020-05-08T05:49:07Z" finished-at="2020-05-08T05:49:26Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.bridgelabz.fundoo.UserService.UserServiceTest@4b168fa9]" name="beforeTest" is-config="true" duration-ms="3886" started-at="2020-05-08T06:44:37Z" finished-at="2020-05-08T06:44:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="testLogin()[pri:0, instance:com.bridgelabz.fundoo.UserService.UserServiceTest@4b168fa9]" name="testLogin" duration-ms="24482" started-at="2020-05-08T05:49:27Z" finished-at="2020-05-08T05:49:52Z">
+        <test-method status="PASS" signature="testUserRegistration()[pri:0, instance:com.bridgelabz.fundoo.UserService.UserServiceTest@4b168fa9]" name="testUserRegistration" duration-ms="24373" started-at="2020-05-08T06:44:41Z" finished-at="2020-05-08T06:45:06Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.bridgelabz.fundoo.UserService.UserServiceTest@4b168fa9]" name="afterTest" is-config="true" duration-ms="1288" started-at="2020-05-08T05:49:52Z" finished-at="2020-05-08T05:49:53Z">
+        </test-method> <!-- testUserRegistration -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.bridgelabz.fundoo.UserService.UserServiceTest@4b168fa9]" name="afterTest" is-config="true" duration-ms="785" started-at="2020-05-08T06:45:06Z" finished-at="2020-05-08T06:45:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
