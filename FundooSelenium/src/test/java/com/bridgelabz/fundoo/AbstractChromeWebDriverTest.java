@@ -2,6 +2,7 @@ package com.bridgelabz.fundoo;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -29,6 +30,8 @@ public abstract class AbstractChromeWebDriverTest {
 		  
 		  //Create a instance of your WebDriver
 		  driver=new ChromeDriver();
+		  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
 	}
 
 	@AfterTest

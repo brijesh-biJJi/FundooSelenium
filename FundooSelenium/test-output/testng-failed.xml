@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.bridgelabz.fundoo.UserService.UserServiceTest">
+      <class name="com.bridgelabz.fundoo.NoteService.NoteServiceTest">
         <methods>
-          <include name="testUserRegistration"/>
           <include name="beforeTest"/>
+          <include name="testCreateNote"/>
           <include name="afterTest"/>
         </methods>
-      </class> <!-- com.bridgelabz.fundoo.UserService.UserServiceTest -->
+      </class> <!-- com.bridgelabz.fundoo.NoteService.NoteServiceTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

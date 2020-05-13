@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -16,6 +17,8 @@ import com.bridgelabz.fundoo.AbstractChromeWebDriverTest;
 
 public class UserServiceTest extends AbstractChromeWebDriverTest{
   
+	JavascriptExecutor jse;
+	
 	@Test
 	  public void testUserRegistration() throws IOException {
 		  driver.get("http://localhost:4200/register");
@@ -43,8 +46,12 @@ public class UserServiceTest extends AbstractChromeWebDriverTest{
 			WebElement phoneElement = driver.findElement(By.id("mat-input-4"));
 			phoneElement.sendKeys("9874563217");
 			
-			screenCapture(new Exception().getStackTrace()[0].getMethodName());
-			WebElement submitElement = driver.findElement(By.cssSelector("body > app-root > app-registration > div > mat-card > div > form > mat-card-content > mat-card-actions > button > span"));
+			jse=(JavascriptExecutor)driver;
+			jse.executeScript("scroll(0,100)");
+
+			
+			
+			WebElement submitElement = driver.findElement(By.cssSelector("#submit"));
 			submitElement.click();
 			
 			sleep(10);
@@ -68,15 +75,17 @@ public class UserServiceTest extends AbstractChromeWebDriverTest{
 			passwordElement.sendKeys("abcd");
 			
 			sleep(2);
-			
-			WebElement submitElement = driver.findElement(By.cssSelector("body > app-root > app-login > div > mat-card > div > mat-card-content > mat-card-actions > button > span"));
+			screenCapture(new Exception().getStackTrace()[0].getMethodName());
+			WebElement submitElement = driver.findElement(By.id("submit"));
 			submitElement.click();
 			
-			sleep(2);
+			
 			
 			WebElement brandNameElement = driver.findElement(By.cssSelector("body > app-root > app-dashboard > div > div.toolbar > mat-toolbar > span > h1"));
 			System.out.println("Brand Name : "+brandNameElement.getText());
 			
+			sleep(2);
+			screenCapture(new Exception().getStackTrace()[0].getMethodName());
 			assertEquals("Fundoo", brandNameElement.getText());
 	  }
 	  
@@ -86,6 +95,7 @@ public class UserServiceTest extends AbstractChromeWebDriverTest{
 			
 			sleep(2);
 			
+			screenCapture(new Exception().getStackTrace()[0].getMethodName());
 			WebElement forgotPasswordLink = driver.findElement(By.cssSelector("body > app-root > app-login > div > mat-card > div > mat-card-content > mat-card-actions > a:nth-child(5)"));
 			forgotPasswordLink.click();
 			
@@ -95,7 +105,7 @@ public class UserServiceTest extends AbstractChromeWebDriverTest{
 			emailElement.sendKeys("brijeshkanchan7@gmail.com");
 			
 			
-			
+			screenCapture(new Exception().getStackTrace()[0].getMethodName());
 			WebElement submitElement = driver.findElement(By.id("submit"));
 			submitElement.click();
 			
@@ -103,6 +113,7 @@ public class UserServiceTest extends AbstractChromeWebDriverTest{
 			System.out.println(driver.getCurrentUrl());
 			
 			sleep(5);
+			screenCapture(new Exception().getStackTrace()[0].getMethodName());
 			//Check URL
 			assertEquals("http://localhost:4200/login", driver.getCurrentUrl());
 			
@@ -121,18 +132,21 @@ public class UserServiceTest extends AbstractChromeWebDriverTest{
 			WebElement confirmPassElement = driver.findElement(By.id("confirm"));
 			confirmPassElement.sendKeys("abcd");
 			
-			sleep(5);
+			screenCapture(new Exception().getStackTrace()[0].getMethodName());
+			WebElement submitElement = driver.findElement(By.id("submit"));
+			submitElement.click();
 			
-			WebElement saveElement=driver.findElement(By.cssSelector("body > app-root > app-changepassword > div > mat-card > div > mat-card-content > mat-card-actions > button > span"));
-			saveElement.click();
-			sleep(10);
+			sleep(5);
 			System.out.println(driver.getCurrentUrl());
 			
 			sleep(5);
+			screenCapture(new Exception().getStackTrace()[0].getMethodName());
 			//Check URL
 			assertEquals("http://localhost:4200/login", driver.getCurrentUrl());
 			
 		
 	  }
+	  
+	  
 	  
 }
