@@ -5,8 +5,9 @@
     <classes>
       <class name="com.bridgelabz.fundoo.NoteService.NoteServiceTest">
         <methods>
+          <include name="testCreateLabel"/>
+          <include name="testResult"/>
           <include name="beforeTest"/>
-          <include name="testCreateNote"/>
           <include name="afterTest"/>
         </methods>
       </class> <!-- com.bridgelabz.fundoo.NoteService.NoteServiceTest -->
