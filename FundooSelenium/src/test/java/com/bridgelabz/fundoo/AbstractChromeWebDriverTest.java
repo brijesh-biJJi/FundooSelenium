@@ -38,7 +38,7 @@ public abstract class AbstractChromeWebDriverTest {
 
 	@BeforeTest
 	public void beforeTest() {
-//		String url="D:\\FundooSelenium\\FundooSelenium\\test-output\\myReport.html";
+////		String url="D:\\FundooSelenium\\FundooSelenium\\test-output\\myReport.html";
 		htmlReport=new ExtentHtmlReporter(System.getProperty("user.dir")+ "/test-output/myReport.html");
 		htmlReport.config().setDocumentTitle("Automation Report");//Title of the Report
 		htmlReport.config().setReportName("Functional Report");//Name of the Report
@@ -57,10 +57,12 @@ public abstract class AbstractChromeWebDriverTest {
 		
 		
 		 //Download the WebDriver Executable
-		  WebDriverManager.chromedriver().setup();
-		  
-		  //Create a instance of your WebDriver
-		  driver=new ChromeDriver();
+//		  WebDriverManager.chromedriver().setup();
+//		  
+//		  //Create a instance of your WebDriver
+//		  driver=new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver","D:\\setup\\chromedriver.exe");
+		driver=new ChromeDriver();
 		  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 	}

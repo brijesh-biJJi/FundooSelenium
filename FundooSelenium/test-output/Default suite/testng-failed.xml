@@ -3,14 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.bridgelabz.fundoo.NoteService.NoteServiceTest">
+      <class name="com.bridgelabz.LabelService.LabelServiceTest">
         <methods>
+          <include name="testAddLabel"/>
           <include name="testCreateLabel"/>
-          <include name="testResult"/>
+          <include name="testSearchAndAddLabel"/>
+          <include name="testEditLabel"/>
           <include name="beforeTest"/>
+          <include name="testDeleteLabel"/>
           <include name="afterTest"/>
         </methods>
-      </class> <!-- com.bridgelabz.fundoo.NoteService.NoteServiceTest -->
+      </class> <!-- com.bridgelabz.LabelService.LabelServiceTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

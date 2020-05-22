@@ -274,8 +274,8 @@ public class NoteServiceTest extends AbstractChromeWebDriverTest {
 	
 	//Labels
 	
-	@Test
-	public void testCreateLabel() {
+	@Test 
+	public void testGridAndListView() {
 		driver.get("http://localhost:4200/login");
 		
 		WebElement emailElement = driver.findElement(By.id("email"));
@@ -296,40 +296,25 @@ public class NoteServiceTest extends AbstractChromeWebDriverTest {
 		
 		driver.manage().window().maximize();
 		
+		sleep(2);
 		WebElement sideNavElement = driver.findElement(By.id("sideMenu"));
 		sideNavElement.click();
 		
 		sleep(2);
 		
-		WebElement editLabelElement = driver.findElement(By.id("onClickEditLabel"));
-		editLabelElement.click();
+		WebElement listViewElement = driver.findElement(By.id("gridListView"));
+		listViewElement.click();
 		
-		
-		WebElement createLabelElement = driver.findElement(By.id("onClickCreateLabel"));
-		createLabelElement.sendKeys("Test label");
-																	
-		WebElement submitLabelElement = driver.findElement(By.id("onClickSubmitLabel"));
-		submitLabelElement.click();
+		sleep(3);
+		WebElement gridViewElement = driver.findElement(By.id("gridListView"));
+		gridViewElement.click();
 		
 		sleep(2);
-		
-		
-		
-		WebElement element = driver.findElement(By.id("onClickRefresh"));
-		element.click();
-		sleep(10);
-		
-		
-		WebElement sideElement = driver.findElement(By.id("sideMenu"));
-		sideElement.click();
-		
-		sleep(5);
-		
-		
 	}
 	
-	@Test
-	public void testEditLabel() {
+	@Test 
+	public void testReminderNote() {
+		extentTest=extentReport.createTest("FundooUpdateNoteTest");
 		driver.get("http://localhost:4200/login");
 		
 		WebElement emailElement = driver.findElement(By.id("email"));
@@ -350,39 +335,32 @@ public class NoteServiceTest extends AbstractChromeWebDriverTest {
 		
 		driver.manage().window().maximize();
 		
+		sleep(2);
+		WebElement clickReminderElement = driver.findElement(By.id("clickReminder"));
+		clickReminderElement.click();
+		
+		sleep(2);
+		WebElement remindTodayElement = driver.findElement(By.id("remindToday"));
+		remindTodayElement.click();
+		sleep(2);
+		
 		WebElement sideNavElement = driver.findElement(By.id("sideMenu"));
 		sideNavElement.click();
 		
 		sleep(2);
 		
-		WebElement editLabelElement = driver.findElement(By.id("onClickEditLabel"));
-		editLabelElement.click();
+		WebElement onClickReminderElement = driver.findElement(By.id("onClickReminder"));
+		onClickReminderElement.click();
 		
 		
-		WebElement inputLabelElement = driver.findElement(By.id("inputLabel"));
-		inputLabelElement.clear();
-		inputLabelElement.sendKeys("Edited Label");
-																	
-		WebElement clickEditLabelElement = driver.findElement(By.id("clickEdit"));
-		clickEditLabelElement.click();
+		sleep(3);
 		
+	}
 
-		sleep(1);
-		
-		WebElement element = driver.findElement(By.id("onClickRefresh"));
-		element.click();
-		sleep(10);
-		
-		
-		WebElement sideElement = driver.findElement(By.id("sideMenu"));
-		sideElement.click();
-		
-		sleep(5);
-	}
 	
-	
-	@Test
-	public void testDeleteLabel() {
+	@Test 
+	public void testAddCollaboratorNote() {
+		extentTest=extentReport.createTest("FundooUpdateNoteTest");
 		driver.get("http://localhost:4200/login");
 		
 		WebElement emailElement = driver.findElement(By.id("email"));
@@ -403,29 +381,68 @@ public class NoteServiceTest extends AbstractChromeWebDriverTest {
 		
 		driver.manage().window().maximize();
 		
-		WebElement sideNavElement = driver.findElement(By.id("sideMenu"));
-		sideNavElement.click();
+		sleep(2);
+		WebElement clickCollabElement = driver.findElement(By.id("clickCollab"));
+		clickCollabElement.click();
+		
 		
 		sleep(2);
 		
-		WebElement editLabelElement = driver.findElement(By.id("onClickEditLabel"));
-		editLabelElement.click();
+		WebElement inputCollabElement = driver.findElement(By.id("inputCollab"));
+		inputCollabElement.sendKeys("srijansalian315@gmail.com");
 		
+		sleep(2);
 		
-		WebElement deleteLabelElement = driver.findElement(By.id("deleteLabel"));
-		deleteLabelElement.click();
-																	
+		WebElement addCollabElement = driver.findElement(By.id("addCollab"));
+		addCollabElement.click();
+		sleep(4);
 		
-		sleep(1);
+		WebElement closeCollabElement = driver.findElement(By.id("closeCollab"));
+		closeCollabElement.click();
 		
-		WebElement element = driver.findElement(By.id("onClickRefresh"));
-		element.click();
-		sleep(10);
+		sleep(2);
 		
-		
-		WebElement sideElement = driver.findElement(By.id("sideMenu"));
-		sideElement.click();
-		
-		sleep(5);
 	}
+	
+	@Test 
+	public void testRemoveCollaboratorNote() {
+		extentTest=extentReport.createTest("RemoveCollaboratorTest");
+		driver.get("http://localhost:4200/login");
+		
+		WebElement emailElement = driver.findElement(By.id("email"));
+		emailElement.sendKeys("brijeshkanchan7@gmail.com");
+		
+		sleep(2);
+		
+		WebElement passwordElement = driver.findElement(By.id("pass"));
+		passwordElement.sendKeys("abcd");
+		
+		sleep(2);
+		
+		WebElement submitElement = driver.findElement(By.id("submit"));
+		submitElement.click();
+		
+		
+		sleep(15);
+		
+		driver.manage().window().maximize();
+		
+		sleep(2);
+		WebElement clickCollabElement = driver.findElement(By.id("clickCollab"));
+		clickCollabElement.click();
+		
+		
+		sleep(2);
+		
+		WebElement removeCollabElement = driver.findElement(By.id("removeCollab"));
+		removeCollabElement.click();
+		sleep(4);
+		
+		WebElement closeCollabElement = driver.findElement(By.id("closeCollab"));
+		closeCollabElement.click();
+		
+		sleep(2);
+		
+	}
+	
 }
